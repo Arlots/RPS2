@@ -22,5 +22,14 @@ function getComputerChoice () {
 function getUserChoice () {
     let userChoice = prompt('Please choose: Rock, Paper, Scissors');
     console.log(userChoice);
+    let userChoiceLowerCase = userChoice.toLowerCase();
+    console.log(userChoiceLowerCase);
 
+    while (userChoiceLowerCase !== 'rock' && userChoiceLowerCase !== 'paper' && userChoiceLowerCase !== 'scissors') {
+        userChoice = prompt('Those options are unavailable, please choose again: Rock, Paper, Scissors');
+        userChoiceLowerCase = userChoice.toLowerCase();
+    } 
+
+    return userChoiceLowerCase;
+   
 }
