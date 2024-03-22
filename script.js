@@ -74,5 +74,13 @@ function playGame () {
         alert(`Too bad! You lost ${computerWins} to ${userWins}!`)
     }
 
+    let playAgain = prompt("Play again? Enter 'yes' to play again. Enter 'no' to stop playing.");
+
+    if (playAgain.toLowerCase() == 'yes') {
+        playGame();
+    } else {
+        console.log("Thanks for playing! Refresh the browser to start playing again!")
+    }
+
 
 }
