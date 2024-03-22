@@ -1,4 +1,3 @@
-let userChoice;
 
 //Define choiceNumber variable that randomly picks between 0, 1, and 2, then assign the computer rock, paper, or scissors based on that number.
 function getComputerChoice () {
@@ -9,15 +8,19 @@ function getComputerChoice () {
 
    if (choiceNumber == 0) {
         computerChoice = "rock";
-        return computerChoice;
    } else if (choiceNumber == 1) {
-        computerChoice = "Paper";
-        return computerChoice;
+        computerChoice = "paper";
    } else if (choiceNumber == 2) {
-        computerChoice = "Scissors";
-        return computerChoice;
+        computerChoice = "cissors";
    };
 
    console.log(computerChoice);
+   return computerChoice;
+
+}
+
+function getUserChoice () {
+    let userChoice = prompt('Please choose: Rock, Paper, Scissors');
+    console.log(userChoice);
 
 }
