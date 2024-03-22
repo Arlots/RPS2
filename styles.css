@@ -2,7 +2,7 @@ h1 {
     text-align: center;
 }
 
-button {
+#start {
     display: block;
     width: 250px;
     height: 250px;
@@ -11,7 +11,7 @@ button {
     margin-top: 100px;
 }
 
-button:hover {
+#start:hover {
     transform: scale(1.2);
 }
 
