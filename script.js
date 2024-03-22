@@ -13,7 +13,7 @@ function getComputerChoice () {
         computerChoice = "scissors";
    };
 
-    console.log(`Computer: ${computerChoice}`);
+    //console.log(`Computer: ${computerChoice}`);
    return computerChoice;
 
 }
@@ -26,7 +26,7 @@ function getUserChoice () {
         userChoice = prompt('Those options are unavailable, please choose again: Rock, Paper, Scissors');
         userChoiceLowerCase = userChoice.toLowerCase();
     } 
-    console.log(`You: ${userChoiceLowerCase}`);
+    //console.log(`You: ${userChoiceLowerCase}`);
     return userChoiceLowerCase; 
    
 }
@@ -38,13 +38,16 @@ function playRound () {
    let winner;
 
     if (userChoice == computerChoice) {
-        console.log("It's a tie!")
+        alert("It's a tie!")
+        //console.log("It's a tie!")
     } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
-        console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`)
+        alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+        //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
         winner = 'computer';
         return winner;
     } else {
-        console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`)
+        alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+        //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
         winner = 'user';
         return winner;
 
@@ -62,9 +65,9 @@ function playGame () {
         } else if (winner == 'user') {
             userWins++;
         }
-    
-    console.log(`Computer: ${computerWins}`);
-    console.log(`You: ${userWins} `);
+    alert(`Computer: ${computerWins} You: ${userWins}`);
+    //console.log(`Computer: ${computerWins}`);
+    //console.log(`You: ${userWins} `);
 
     }
 
@@ -79,7 +82,8 @@ function playGame () {
     if (playAgain.toLowerCase() == 'yes') {
         playGame();
     } else {
-        console.log("Thanks for playing! Refresh the browser to start playing again!")
+        alert("Thanks for playing! Refresh the browser to start playing again!")
+        //console.log("Thanks for playing! Refresh the browser to start playing again!")
     }
 
 
