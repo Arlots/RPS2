@@ -35,12 +35,44 @@ function playRound () {
 
    let computerChoice = getComputerChoice();
    let userChoice = getUserChoice(); 
+   let winner;
 
     if (userChoice == computerChoice) {
         console.log("It's a tie!")
     } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
         console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`)
+        winner = 'computer';
+        return winner;
     } else {
         console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`)
+        winner = 'user';
+        return winner;
+
     }
+}
+
+function playGame () {
+    let computerWins = 0;
+    let userWins = 0;
+
+    while (computerWins < 5 && userWins < 5) {
+    let winner = playRound();
+        if (winner == 'computer') {
+            computerWins++;
+        } else if (winner == 'user') {
+            userWins++;
+        }
+    
+    console.log(`Computer: ${computerWins}`);
+    console.log(`You: ${userWins} `);
+
+    }
+
+    if (userWins == 5) {
+        alert(`Congratulations! You won ${userWins} to ${computerWins}!`)
+    } else if (computerWins == 5) {
+        alert(`Too bad! You lost ${computerWins} to ${userWins}!`)
+    }
+
+
 }
