@@ -54,7 +54,7 @@ function playRound () {
     }
 }
 
-function playGame () {
+/*function playGame () {
     let computerWins = 0;
     let userWins = 0;
 
@@ -85,4 +85,4 @@ function playGame () {
         alert("Thanks for playing! Refresh the browser to start playing again!")
         //console.log("Thanks for playing! Refresh the browser to start playing again!")
     }
-}
+}*/
