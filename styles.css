@@ -19,3 +19,70 @@ h1 {
     width: 50%;
     margin: auto;
 }
+
+#rock, #paper, #scissors {
+    height: 250px;
+    width: auto;
+}
+
+#rock {
+    display: block;
+    margin: auto;
+}
+
+#triangleContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.triangleBottom {
+    display: flex;
+    justify-content: center;
+    gap: 175px;
+}
+
+.arrow {
+    width: 120px;
+}
+
+.line {
+    margin-top: 14px;
+    width: 90px;
+    background: black;
+    height: 10px;
+    float: left;
+}
+
+.point {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid black;
+    float: right;
+}
+
+#leftArrow {
+    position: fixed;
+    left: 525px;
+    bottom: 325px;
+    rotate: 135deg;
+}
+
+#rightArrow {
+    position: fixed;
+    left: 800px;
+    bottom: 325px;
+    rotate: -135deg;
+}
+
+#bottomArrow {
+    position: fixed;
+    left: 670px;
+    bottom: 155px;
+
+}
+
+
+
