@@ -1,14 +1,20 @@
+body {
+}
 h1 {
     text-align: center;
 }
 
 #start {
     display: block;
-    width: 250px;
-    height: 250px;
-    font-size: 100px;
-    margin: auto;
-    margin-top: 100px;
+    height: 90px;
+    width: 110px;
+    font-size: 45px;
+    position: fixed;
+    left: 670px;
+    bottom: 250px;
+    border: none;
+    background-color: rgb(131, 241, 131);
+    box-shadow: 2px 2px 5px gray;
 }
 
 #start:hover {
@@ -16,8 +22,8 @@ h1 {
 }
 
 .centerButton {
-    width: 50%;
-    margin: auto;
+    width: 10%;
+
 }
 
 #rock, #paper, #scissors {
