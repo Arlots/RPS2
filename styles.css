@@ -4,28 +4,6 @@ h1 {
     text-align: center;
 }
 
-#start {
-    display: block;
-    height: 90px;
-    width: 110px;
-    font-size: 45px;
-    position: fixed;
-    left: 670px;
-    bottom: 250px;
-    border: none;
-    background-color: rgb(131, 241, 131);
-    box-shadow: 2px 2px 5px gray;
-}
-
-#start:hover {
-    transform: scale(1.2);
-}
-
-.centerButton {
-    width: 10%;
-
-}
-
 #rock, #paper, #scissors {
     height: 250px;
     width: auto;
@@ -45,7 +23,8 @@ h1 {
 .triangleBottom {
     display: flex;
     justify-content: center;
-    gap: 175px;
+    /*gap: 175px;*/
+    align-items: center;
 }
 
 .arrow {
@@ -69,6 +48,27 @@ h1 {
     float: right;
 }
 
+#leftArrow, #rightArrow {
+    display: block;
+    
+}
+
+#rightArrow {
+    rotate: -135deg;
+}
+
+#leftArrow {
+    rotate: 135deg;
+}
+
+#middleArrowContainer {
+    display: flex;
+    justify-content: center;
+    gap: 13%;
+}
+
+
+/*
 #leftArrow {
     position: fixed;
     left: 525px;
@@ -89,6 +89,7 @@ h1 {
     bottom: 155px;
 
 }
+*/
 
 
 
