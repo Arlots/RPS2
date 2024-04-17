@@ -1,5 +1,8 @@
 
 //Define choiceNumber variable that randomly picks between 0, 1, and 2, then assign the computer rock, paper, or scissors based on that number.
+let computerWins = 0;
+let userWins = 0;
+
 function getComputerChoice () {
 
     let computerChoice;
@@ -49,9 +52,6 @@ function playGame () {
     let hideWelcome = document.querySelector(".welcomeScreen");
     hideWelcome.setAttribute("class", "hidden");
 
-    let computerWins = 0;
-    let userWins = 0;
-
     let playerIcon = document.querySelector("#playerIcon");
     let computerIcon = document.querySelector("#computerIcon");
 
@@ -71,33 +71,36 @@ function playGame () {
     rock.addEventListener("click", function () {
         let computerChoice = getComputerChoice();
         let userChoice = 'rock'; 
-        let winner;
 
-        if (userChoice == computerChoice) {
-            alert("It's a tie!")
-            //console.log("It's a tie!")
-        } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
-            alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-            //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-            winner = 'computer';
-            computerWins ++;
-            computerScoreCount.innerText = `${computerWins}`;
+            if (userChoice == computerChoice) {
+                alert("It's a tie!")
+                //console.log("It's a tie!")
+            } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
+                alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+                //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+                computerWins ++;
+                computerScoreCount.innerText = `${computerWins}`;
+            } else {
+                alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+                //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+                userWins ++;
+                playerScoreCount.innerText = `${userWins}`;
+            };
 
-            return winner;
-        } else {
-            alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-            //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-            winner = 'user';
-            userWins ++;
-            playerScoreCount.innerText = `${userWins}`;
-            return winner;
+        console.log(`computer: ${computerWins}`);
+        console.log(`Player: ${userWins}`);
+
+        if (userWins == 5) {
+            alert("Congratulations! You win!");
+        } else if (computerWins == 5) {
+            alert("Oh no! You lose!");
         }
+
     });
 
     paper.addEventListener("click", function () {
         let computerChoice = getComputerChoice();
         let userChoice = 'paper'; 
-        let winner;
 
         if (userChoice == computerChoice) {
             alert("It's a tie!")
@@ -105,25 +108,20 @@ function playGame () {
         } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
             alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
             //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-            winner = 'computer';
             computerWins ++;
             computerScoreCount.innerText = `${computerWins}`;
-
-            return winner;
         } else {
             alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
             //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-            winner = 'user';
             userWins ++;
             playerScoreCount.innerText = `${userWins}`;
-            return winner;
         }
+
     });
 
     scissors.addEventListener("click", function () {
         let computerChoice = getComputerChoice();
         let userChoice = 'scissors'; 
-        let winner;
 
         if (userChoice == computerChoice) {
             alert("It's a tie!")
@@ -131,85 +129,15 @@ function playGame () {
         } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
             alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
             //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-            winner = 'computer';
             computerWins ++;
             computerScoreCount.innerText = `${computerWins}`;
-
-            return winner;
         } else {
             alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
             //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-            winner = 'user';
             userWins ++;
             playerScoreCount.innerText = `${userWins}`;
-            return winner;
         }
+
     });
 
-    /*while (computerWins < 5 && userWins < 5) {
-    let winner = playRound();
-        if (winner == 'computer') {
-            computerWins++;
-        } else if (winner == 'user') {
-            userWins++;
-        }
-    alert(`Computer: ${computerWins} You: ${userWins}`);
-    //console.log(`Computer: ${computerWins}`);
-    //console.log(`You: ${userWins} `);
-
-    }
-
-    if (userWins == 5) {
-        alert(`Congratulations! You won ${userWins} to ${computerWins}!`)
-    } else if (computerWins == 5) {
-        alert(`Too bad! You lost ${computerWins} to ${userWins}!`)
-    }
-
-    let playAgain = prompt("Play again? Enter 'yes' to play again. Enter 'no' to stop playing.");
-
-    if (playAgain.toLowerCase() == 'yes') {
-        playGame();
-    } else {
-        alert("Thanks for playing! Refresh the browser to start playing again!")
-        //console.log("Thanks for playing! Refresh the browser to start playing again!")
-    }*/
 }
-
-/*function getUserChoice () {
-    let userChoice = prompt('Please choose: Rock, Paper, Scissors');
-    let userChoiceLowerCase = userChoice.toLowerCase();
-
-    while (userChoiceLowerCase !== 'rock' && userChoiceLowerCase !== 'paper' && userChoiceLowerCase !== 'scissors') {
-        userChoice = prompt('Those options are unavailable, please choose again: Rock, Paper, Scissors');
-        userChoiceLowerCase = userChoice.toLowerCase();
-    } 
-    //console.log(`You: ${userChoiceLowerCase}`);
-    return userChoiceLowerCase; 
-   
-}*/
-
-/* Original code. playGame() takes pieces of this to make UI version
-
-function playRound () {
-
-   let computerChoice = getComputerChoice();
-   let userChoice = getUserChoice(); 
-   let winner;
-
-    if (userChoice == computerChoice) {
-        alert("It's a tie!")
-        //console.log("It's a tie!")
-    } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
-        alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-        //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-        winner = 'computer';
-        return winner;
-    } else {
-        alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-        //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-        winner = 'user';
-        return winner;
-
-    }
-}*/　
-
