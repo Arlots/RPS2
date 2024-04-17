@@ -18,42 +18,6 @@ function getComputerChoice () {
 
 }
 
-function getUserChoice () {
-    let userChoice = prompt('Please choose: Rock, Paper, Scissors');
-    let userChoiceLowerCase = userChoice.toLowerCase();
-
-    while (userChoiceLowerCase !== 'rock' && userChoiceLowerCase !== 'paper' && userChoiceLowerCase !== 'scissors') {
-        userChoice = prompt('Those options are unavailable, please choose again: Rock, Paper, Scissors');
-        userChoiceLowerCase = userChoice.toLowerCase();
-    } 
-    //console.log(`You: ${userChoiceLowerCase}`);
-    return userChoiceLowerCase; 
-   
-}
-
-function playRound () {
-
-   let computerChoice = getComputerChoice();
-   let userChoice = getUserChoice(); 
-   let winner;
-
-    if (userChoice == computerChoice) {
-        alert("It's a tie!")
-        //console.log("It's a tie!")
-    } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
-        alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-        //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
-        winner = 'computer';
-        return winner;
-    } else {
-        alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-        //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
-        winner = 'user';
-        return winner;
-
-    }
-}
-
 function welcome () {
     let welcomeScreen = document.createElement("div");
     welcomeScreen.setAttribute("class", "welcomeScreen");
@@ -104,6 +68,84 @@ function playGame () {
     let paper = document.querySelector("#paper");
     let scissors = document.querySelector("#scissors");
 
+    rock.addEventListener("click", function () {
+        let computerChoice = getComputerChoice();
+        let userChoice = 'rock'; 
+        let winner;
+
+        if (userChoice == computerChoice) {
+            alert("It's a tie!")
+            //console.log("It's a tie!")
+        } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
+            alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            winner = 'computer';
+            computerWins ++;
+            computerScoreCount.innerText = `${computerWins}`;
+
+            return winner;
+        } else {
+            alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            winner = 'user';
+            userWins ++;
+            playerScoreCount.innerText = `${userWins}`;
+            return winner;
+        }
+    });
+
+    paper.addEventListener("click", function () {
+        let computerChoice = getComputerChoice();
+        let userChoice = 'paper'; 
+        let winner;
+
+        if (userChoice == computerChoice) {
+            alert("It's a tie!")
+            //console.log("It's a tie!")
+        } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
+            alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            winner = 'computer';
+            computerWins ++;
+            computerScoreCount.innerText = `${computerWins}`;
+
+            return winner;
+        } else {
+            alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            winner = 'user';
+            userWins ++;
+            playerScoreCount.innerText = `${userWins}`;
+            return winner;
+        }
+    });
+
+    scissors.addEventListener("click", function () {
+        let computerChoice = getComputerChoice();
+        let userChoice = 'scissors'; 
+        let winner;
+
+        if (userChoice == computerChoice) {
+            alert("It's a tie!")
+            //console.log("It's a tie!")
+        } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
+            alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+            winner = 'computer';
+            computerWins ++;
+            computerScoreCount.innerText = `${computerWins}`;
+
+            return winner;
+        } else {
+            alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+            winner = 'user';
+            userWins ++;
+            playerScoreCount.innerText = `${userWins}`;
+            return winner;
+        }
+    });
+
     /*while (computerWins < 5 && userWins < 5) {
     let winner = playRound();
         if (winner == 'computer') {
@@ -132,3 +174,42 @@ function playGame () {
         //console.log("Thanks for playing! Refresh the browser to start playing again!")
     }*/
 }
+
+/*function getUserChoice () {
+    let userChoice = prompt('Please choose: Rock, Paper, Scissors');
+    let userChoiceLowerCase = userChoice.toLowerCase();
+
+    while (userChoiceLowerCase !== 'rock' && userChoiceLowerCase !== 'paper' && userChoiceLowerCase !== 'scissors') {
+        userChoice = prompt('Those options are unavailable, please choose again: Rock, Paper, Scissors');
+        userChoiceLowerCase = userChoice.toLowerCase();
+    } 
+    //console.log(`You: ${userChoiceLowerCase}`);
+    return userChoiceLowerCase; 
+   
+}*/
+
+/* Original code. playGame() takes pieces of this to make UI version
+
+function playRound () {
+
+   let computerChoice = getComputerChoice();
+   let userChoice = getUserChoice(); 
+   let winner;
+
+    if (userChoice == computerChoice) {
+        alert("It's a tie!")
+        //console.log("It's a tie!")
+    } else if ((userChoice == 'rock' && computerChoice == 'paper') || (userChoice == 'paper' && computerChoice == 'scissors') ||(userChoice == 'scissors' && computerChoice == 'rock')  ) {
+        alert(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+        //console.log(`Too bad! You chose ${userChoice}, but your opponent chose ${computerChoice}. You lose.`);
+        winner = 'computer';
+        return winner;
+    } else {
+        alert(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+        //console.log(`Well done! You chose ${userChoice}, which beat the opponents ${computerChoice}.`);
+        winner = 'user';
+        return winner;
+
+    }
+}*/　
+
