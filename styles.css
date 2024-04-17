@@ -79,28 +79,72 @@ h1 {
     opacity: 1;
 }
 
-/*
-#leftArrow {
+#sideBar {
+    height: 50%;
+    width: 20%;
+    /*border: 3px solid transparent;*/
     position: fixed;
-    left: 525px;
-    bottom: 325px;
-    rotate: 135deg;
+    bottom: 10px;
+    box-shadow: -2px 2px 5px grey;
+    background-color: rgb(252, 249, 249);
 }
 
-#rightArrow {
-    position: fixed;
-    left: 800px;
-    bottom: 325px;
-    rotate: -135deg;
+#scoreHeader {
+    display: block;
+    text-align: center;
+    font-size: 28px;
 }
 
-#bottomArrow {
+.welcomeScreen {
+    background-color: rgb(252, 249, 249); 
+    width: 50%; 
+    height: 65%; 
+    /*border: 1px solid black; */
+    box-shadow: 2px 2px 5px grey;
     position: fixed;
-    left: 670px;
-    bottom: 155px;
+    bottom: 30%;
+    left: 25%;
 
 }
-*/
 
+.startButton {
+    display: block;
+    border: none;
+    font-size: 25px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(73, 211, 73);
+    box-shadow: 2px 2px 5px rgb(31, 92, 109);
+
+}
+
+.startButton:hover {
+    scale: 1.2;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#computerIcon, #playerIcon {
+    width: 20%;
+    margin-left: 5%;
+}
+
+#computerScore {
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+#computerScore, #playerScore {
+    display: flex;
+}
+
+.scoreText {
+    margin-left: 5rem;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 

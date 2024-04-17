@@ -54,11 +54,57 @@ function playRound () {
     }
 }
 
-/*function playGame () {
+function welcome () {
+    let welcomeScreen = document.createElement("div");
+    welcomeScreen.setAttribute("class", "welcomeScreen");
+
+    let welcomeHeader = document.createElement("h2");
+    welcomeHeader.innerText = "How to Play: \n Rock Paper Scissors!";
+    welcomeHeader.setAttribute("style", "text-align: center; font-size: 40px;")
+    welcomeScreen.appendChild(welcomeHeader);
+
+    let welcomeIntro = document.createElement("p");
+    welcomeIntro.setAttribute("style", "margin-left: 3rem; font-size: 24px;")
+
+    welcomeIntro.innerText = "To play Rock Paper Scissors, click the start button below. \n\n Play against the computer by picking your choice by clicking on the picture of the choice you want. \n\n The score will be kept in the lower-left corner! \n\n Enjoy!"
+    welcomeScreen.appendChild(welcomeIntro);
+
+    let startButton = document.createElement("button");
+    startButton.setAttribute("class", "startButton");
+    startButton.innerText = "Start Game";
+    welcomeScreen.appendChild(startButton);
+    startButton.setAttribute("onclick", "playGame()");
+
+    let body = document.querySelector("body");
+    body.appendChild(welcomeScreen);
+    
+}
+
+function playGame () {
+
+    let hideWelcome = document.querySelector(".welcomeScreen");
+    hideWelcome.setAttribute("class", "hidden");
+
     let computerWins = 0;
     let userWins = 0;
 
-    while (computerWins < 5 && userWins < 5) {
+    let playerIcon = document.querySelector("#playerIcon");
+    let computerIcon = document.querySelector("#computerIcon");
+
+    playerIcon.setAttribute("src", "human.png");
+    computerIcon.setAttribute("src", "robot.png");
+
+    let playerScoreCount = document.querySelector("#playerScoreCount");
+    let computerScoreCount = document.querySelector("#computerScoreCount");
+
+    playerScoreCount.innerText = `${userWins}`;
+    computerScoreCount.innerText = `${computerWins}`;
+    
+    let rock = document.querySelector("#rock");
+    let paper = document.querySelector("#paper");
+    let scissors = document.querySelector("#scissors");
+
+    /*while (computerWins < 5 && userWins < 5) {
     let winner = playRound();
         if (winner == 'computer') {
             computerWins++;
@@ -84,5 +130,5 @@ function playRound () {
     } else {
         alert("Thanks for playing! Refresh the browser to start playing again!")
         //console.log("Thanks for playing! Refresh the browser to start playing again!")
-    }
-}*/
+    }*/
+}

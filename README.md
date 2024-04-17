@@ -16,8 +16,10 @@ Rock Paper Scissors Revisited (adding a UI)
 
 #Img Credit
 
-Rock - Image by Clker-Free-Vector-Images from Pixabay
+Rock, Paper, and Scissor Images - Image by Clker-Free-Vector-Images from Pixabay
 
+Robot (Computer Icon) - Image by OpenClipart-Vectors from Pixabay
+Huma (Player Icon) - Image by OpenClipart-Vectors from Pixabay
 
 ****
 

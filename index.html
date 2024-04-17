@@ -7,7 +7,8 @@
         <script src="./script.js"></script>
     </head>
 
-    <body>
+    <body onload="welcome ()">
+
         <h1>Rock Paper Scissors</h1>
 
         <div id="triangleContainer">
@@ -34,8 +35,31 @@
                 </div>
 
                 <img src="paper.png" id="paper">
-                
             </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="scoreBoard">
+
+                <p id="scoreHeader">Score</p>
+
+                <div id="scoreContainer">
+                    <div id="computerScore">
+                        <img id="computerIcon">
+                        <p class="scoreText" id="computerScoreCount"></p>
+
+                    </div>
+
+                    <div id="playerScore">
+                        <img id="playerIcon">
+                        <p class="scoreText" id="playerScoreCount"></p>
+
+                    </div>
+
+                </div>
+    
+            </div>
+
         </div>
 
     </body>
