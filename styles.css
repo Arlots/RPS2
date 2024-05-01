@@ -107,6 +107,19 @@ h1 {
 
 }
 
+.gameOver {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(252, 249, 249); 
+    width: 50%; 
+    height: 65%; 
+    /*border: 1px solid black; */
+    box-shadow: 2px 2px 5px grey;
+    position: fixed;
+    bottom: 30%;
+    left: 25%;
+}
+
 .startButton {
     display: block;
     border: none;
@@ -147,4 +160,9 @@ h1 {
     margin-bottom: 0;
 }
 
-
+.winLoseText {
+    font-size: 45px;
+    position: fixed;
+    bottom: 60%;
+    left: 5%;
+}
